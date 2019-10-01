@@ -25,8 +25,8 @@
     store,
     data () {
       return {
-        title: store.state.lists[0].title,
-        content: store.state.lists[0].content
+        title: store.state.lists[this.$store.state.indexc].title,
+        content: store.state.lists[this.$store.state.indexc].content
       }
     },
     methods: {
@@ -36,9 +36,9 @@
         //   content: this.content,
         //   time: new Date()
         // })
-        store.state.lists[0].title=this.title;
-        store.state.lists[0].content=this.content;
-        store.state.lists[0].time=new Date();
+        store.state.lists[this.$store.state.indexc].title=this.title;
+        store.state.lists[this.$store.state.indexc].content=this.content;
+        store.state.lists[this.$store.state.indexc].time=new Date();
 
         this.$router.push({name:'list'})
        },

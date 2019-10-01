@@ -26,13 +26,12 @@
 <script>
   import store from '@/store.js'
   import Info from '@/views/Info.vue'
-  import Edit from '@/views/Edit.vue'
+
   export default {
     name: "List",
     store,
     components: {
       Info,
-      Edit
     },
     data () {
       return {
@@ -57,7 +56,8 @@
       	this.$router.push({name:'edit'})
       },
       choose (index) {
-        this.current = index
+        this.current = index;
+		this.$store.state.indexc=index;
       },
       showInfo (item) {
         this.chooseOne = item
